@@ -41,8 +41,8 @@ class StoreController extends Controller
     {
         try {
             $this->storeService->setMerchantId();
-            $user = $this->storeService->getStoreById($id);
-            return response()->json(['message'=>'success','data'=>$user],200);
+            $store = $this->storeService->getStoreById($id);
+            return response()->json(['message'=>'success','data'=>$store],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);

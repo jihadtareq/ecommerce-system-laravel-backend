@@ -19,8 +19,8 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $stores = $this->productService->all();
-            return response()->json(['message'=>'success','data'=>$stores],200);
+            $products = $this->productService->all();
+            return response()->json(['message'=>'success','data'=>$products],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
@@ -31,8 +31,8 @@ class ProductController extends Controller
     public function create(ProductRequest $request)
     {
        try {
-            $store = $this->productService->create($request->all());
-            return response()->json(['message'=>'success','data'=>$store],200);
+            $product = $this->productService->create($request->all());
+            return response()->json(['message'=>'success','data'=>$product],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message' => 'failed', 'error'=>$th->getMessage()],500);
@@ -42,8 +42,8 @@ class ProductController extends Controller
     public function show($id)
     {
         try {
-            $user = $this->productService->getProductById($id);
-            return response()->json(['message'=>'success','data'=>$user],200);
+            $product = $this->productService->getProductById($id);
+            return response()->json(['message'=>'success','data'=>$product],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
