@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Services\LoginService;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\User\LoginRequest;
 
 class LoginController extends Controller
 {
