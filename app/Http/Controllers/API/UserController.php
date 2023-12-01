@@ -45,7 +45,7 @@ class UserController extends Controller
             //throw $th;
             return response()->json(['message' => 'failed', 'error'=>$th->getMessage()],500);
         }
-     }
+    }
 
     /**
      * Display the specified resource.

@@ -5,8 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\UserType;
 
-class UserCheck
+class MerchantCheck
 {
     /**
      * Handle an incoming request.
@@ -17,10 +18,13 @@ class UserCheck
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if(!Auth::user())
+        if(Auth::user()->getType() != UserType::MERCHANT)
+        {
+            return response()->json(['message' => 'failed', 'error'=> 'not_merchant'], 401);
+        }elseif(!Auth::user()){
             return response()->json(['message' => 'failed', 'error'=> 'unauthanticated'], 401);
-    
+        }
+
         return $next($request);
     }
 }

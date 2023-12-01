@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     require_once(__DIR__.'/v1/users.php');
     require_once(__DIR__.'/v1/login.php');
+    require_once(__DIR__.'/v1/stores.php');
 });

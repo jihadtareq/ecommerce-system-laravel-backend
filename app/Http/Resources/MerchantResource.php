@@ -15,8 +15,8 @@ class MerchantResource extends UserResource
     public function toArray(Request $request): array
     {
         return parent::toArray($request) + array(
-            'commercialRegistrationNumber'=>$this->merchant->commercial_registration_number,
-            'taxRegistrationNumber'=>$this->merchant->tax_registration_number
+            'commercialRegistrationNumber'=>optional($this->merchant)->commercial_registration_number,
+            'taxRegistrationNumber'=>optional($this->merchant)->tax_registration_number
         );
     }
 }

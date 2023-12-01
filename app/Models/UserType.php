@@ -10,4 +10,7 @@ class UserType extends Model
     use HasFactory;
     protected $table = 'user_types';
     protected $guarded = [];
+
+    const MERCHANT = 'merchant';
+    const USER = 'user';
 }
