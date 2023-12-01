@@ -22,4 +22,10 @@ class CartDetail extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    function getProductPrice()
+    {
+        return $this->product->calculatePrice();    
+    }
+
 }

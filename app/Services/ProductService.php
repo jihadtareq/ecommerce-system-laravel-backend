@@ -69,9 +69,7 @@ class ProductService
     }
     public function getProductById($id)
     {
-        $store = $this->productRepository->findById($id);
-        return new ProductResource($store);
-
+       return new ProductResource($this->productRepository->findById($id));
     }
 
 }

@@ -66,4 +66,17 @@ class Product extends Model
     {
        return $this->getTranslationsCollection('description'); 
     }
+
+    public function getStoreVat() 
+    {
+        return $this->store->vat_percentage;
+    }
+    public function calculatePriceVat() 
+    {
+        return $this->price * ($this->getStoreVat()/100);
+    }
+    public function calculatePrice() 
+    {
+        return $this->price + $this->calculatePriceVat();
+    }
 }

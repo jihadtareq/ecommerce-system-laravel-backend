@@ -21,4 +21,5 @@ class Cart extends Model
     {
         return $this->hasMany(CartDetail::class,'cart_id','id');
     }
+
 }

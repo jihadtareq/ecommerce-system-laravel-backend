@@ -7,11 +7,14 @@ use App\Repositories\Contracts\MerchantRepositoryInterface;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\MerchantResource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\UserType;
 class UserService 
 {
     private $userRepository;
     private $merchantService;
     protected $image;
+    protected $user;
     protected $password;
     public function __construct(UserRepositoryInterface $userRepository,MerchantService $merchantService)
     {
@@ -27,15 +30,23 @@ class UserService
     public function register($data)
     {
  
-        $this->setImage($data['picture']);
         $this->hashPassword($data['password']);
-        $data['picture'] = $this->image;
         $data['password'] = $this->password;
-        $user =  $this->userRepository->create($data);
-        $this->merchantService->setMerchantArray($user,$data);
-        $this->merchantService->createMerchantDetail();
-        $user->accessToken = $user->createToken('users')->accessToken; 
-        return new UserResource($user);
+        if(isset($data['picture']))
+        {
+            $this->setImage($data['picture']);
+            $data['picture'] = $this->image;
+        }
+        DB::transaction(function () use($data){
+            $this->user =  $this->userRepository->create($data);
+            if($this->user->getType() == UserType::MERCHANT)
+            {
+                $this->merchantService->setMerchantArray($this->user,$data);
+                $this->merchantService->createMerchantDetail();
+            }
+            $this->user->accessToken = $this->user->createToken('users')->accessToken; 
+        });
+        return new UserResource($this->user);
     }
 
     public function setImage($image)

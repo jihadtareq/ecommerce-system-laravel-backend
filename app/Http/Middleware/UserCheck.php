@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\UserType;
 class UserCheck
 {
     /**
@@ -19,8 +19,13 @@ class UserCheck
     {
 
         if(!Auth::user())
+        {
             return response()->json(['message' => 'failed', 'error'=> 'unauthanticated'], 401);
-    
+        }elseif(Auth::user()->getType() != UserType::CUSTOMER)
+        {
+            return response()->json(['message' => 'failed', 'error'=> 'not_customer'], 403);
+        }
+            
         return $next($request);
     }
 }

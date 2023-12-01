@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -23,4 +23,5 @@ Route::prefix('v1')->group(function () {
     require_once(__DIR__.'/v1/login.php');
     require_once(__DIR__.'/v1/stores.php');
     require_once(__DIR__.'/v1/products.php');
+    require_once(__DIR__.'/v1/carts.php');
 });
