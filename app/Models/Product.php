@@ -43,9 +43,9 @@ class Product extends Model
        $this->setTranslationCollection('description',$textArr); 
     }
 
-    function getDescription($language = null)
+    function getDescription()
     {
-       return $this->getTranslation('description',$language); 
+       return $this->getTranslation('description'); 
     }
 
     function updateDescriptionTranslations($textArr)

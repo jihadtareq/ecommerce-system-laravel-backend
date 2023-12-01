@@ -17,11 +17,11 @@ class LanguageSeeder extends Seeder
         DB::table('languages')->truncate();
 
         Language::create([
-            'name'=>'ar'
+            'language'=>'ar'
         ]);
 
         Language::create([
-            'name'=>'en'
+            'language'=>'en'
         ]);
     }
 }

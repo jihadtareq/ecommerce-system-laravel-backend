@@ -3,20 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Services\StoreService;
-use App\Http\Requests\Store\StoreRequest;
-class StoreController extends Controller
-{
-    protected $storeService;
+use Illuminate\Http\Request;
+use App\Services\ProductService;
+use App\Http\Requests\Product\ProductRequest;
 
-    public function __construct(StoreService $storeService)
+class ProductController extends Controller
+{
+    protected $productService;
+    
+    public function __construct(ProductService $productService)
     {
-        $this->storeService = $storeService;
+        $this->productService = $productService;
     }
+
     public function index()
     {
         try {
-            $stores = $this->storeService->all();
+            $stores = $this->productService->all();
             return response()->json(['message'=>'success','data'=>$stores],200);
         } catch (\Throwable $th) {
             //throw $th;
@@ -25,11 +28,10 @@ class StoreController extends Controller
         
     }
 
-    public function create(StoreRequest $request)
+    public function create(ProductRequest $request)
     {
        try {
-            $this->storeService->setMerchantId();
-            $store = $this->storeService->create($request->all());
+            $store = $this->productService->create($request->all());
             return response()->json(['message'=>'success','data'=>$store],200);
         } catch (\Throwable $th) {
             //throw $th;
@@ -40,13 +42,14 @@ class StoreController extends Controller
     public function show($id)
     {
         try {
-            $this->storeService->setMerchantId();
-            $user = $this->storeService->getStoreById($id);
+            $user = $this->productService->getProductById($id);
             return response()->json(['message'=>'success','data'=>$user],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
         }
     }
+    
+
 
 }

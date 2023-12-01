@@ -12,5 +12,5 @@ class UserType extends Model
     protected $guarded = [];
 
     const MERCHANT = 'merchant';
-    const USER = 'user';
+    const CUSTOMER = 'customer';
 }

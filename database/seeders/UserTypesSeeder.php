@@ -20,7 +20,7 @@ class UserTypesSeeder extends Seeder
         ]);
 
         UserType::create([
-            'type'=>'user'
+            'type'=>'customer'
         ]);
     }
 }

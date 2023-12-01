@@ -20,7 +20,7 @@ class MerchantCheck
     {
         if(Auth::user()->getType() != UserType::MERCHANT)
         {
-            return response()->json(['message' => 'failed', 'error'=> 'not_merchant'], 401);
+            return response()->json(['message' => 'failed', 'error'=> 'not_merchant'], 403);
         }elseif(!Auth::user()){
             return response()->json(['message' => 'failed', 'error'=> 'unauthanticated'], 401);
         }
