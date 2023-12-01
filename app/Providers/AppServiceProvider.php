@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
   
         Schema::defaultStringLength(191);
+        $this->app->register(RepositoryServiceProvider::class);
     }
 
     /**
