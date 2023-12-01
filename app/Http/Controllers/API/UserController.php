@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\RegisterValidation;
-use App\Repositories\Contracts\MerchantRepositoryInterface;
+use App\Http\Requests\User\RegisterRequest;
 use Illuminate\Http\Request;
 use App\Services\UserService;
-use App\Services\MerchantService;
 
 class UserController extends Controller
 {
@@ -36,7 +34,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function register(RegisterValidation $request)
+    public function register(RegisterRequest $request)
     {
        try {
             $user = $this->userService->register($request->except('password_confirmation'));
