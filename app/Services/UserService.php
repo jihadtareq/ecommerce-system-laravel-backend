@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Http\Resources\UserResource;
-// use App\Http\Resources\UserCollection;
 class UserService 
 {
     private $userRepository;
