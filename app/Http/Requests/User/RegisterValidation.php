@@ -27,6 +27,19 @@ class RegisterValidation extends FormRequest
             'email'=> ['required','email','unique:users'],
             'picture'=>['nullable','mimes:jpg,png,bmp'],
             'typeId'=> ['required'],
+            'commercialRegistrationNumber'=> ['required_if:typeId,=,1'],
+            'taxRegistrationNumber'=> ['required_if:typeId,=,1'],
+
         ];
+    }
+
+    public function messages(): array
+    {
+        return 
+        [
+            'commercialRegistrationNumber'=> 'Commercial registration number is required if type is merchant',
+            'taxRegistrationNumber'=> 'tax registration number is required if type is merchant',
+        ];
+
     }
 }
