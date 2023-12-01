@@ -27,8 +27,8 @@ class RegisterValidation extends FormRequest
             'email'=> ['required','email','unique:users'],
             'picture'=>['nullable','mimes:jpg,png,bmp'],
             'typeId'=> ['required'],
-            'commercialRegistrationNumber'=> ['required_if:typeId,=,1'],
-            'taxRegistrationNumber'=> ['required_if:typeId,=,1'],
+            'commercialRegistrationNumber'=> ['required_if:typeId,=,1','unique:merchant_details,commercial_registration_number'],
+            'taxRegistrationNumber'=> ['required_if:typeId,=,1','tax_registration_number'],
 
         ];
     }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\RegisterValidation;
+use App\Repositories\Contracts\MerchantRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+use App\Services\MerchantService;
 
 class UserController extends Controller
 {
