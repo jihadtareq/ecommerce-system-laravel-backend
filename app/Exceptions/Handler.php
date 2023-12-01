@@ -24,7 +24,14 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            
+        });
+
+        $this->reportable(function (BusinessException $e) {
+            if (request()->is('api/*')) {
+                return response()->json(['error' => $e->getMessage()], 422);
+            }
+
         });
     }
 }
