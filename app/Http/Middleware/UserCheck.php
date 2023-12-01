@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Resources\UserResource;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +17,9 @@ class UserCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->guard('api')->user()){
-            $request->merge(['user'=>new UserResource(auth()->guard('api')->user())]);
-            if(!auth()->guard('api')->user())
+        if(Auth::user()){
+            $request->merge(['user'=> Auth::user()]);
+            if(!Auth::user())
                 return response()->json(['message' => 'failed', 'error'=> 'unauthanticated'], 401);
         }
 

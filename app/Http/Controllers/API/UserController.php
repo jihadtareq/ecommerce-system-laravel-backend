@@ -61,6 +61,17 @@ class UserController extends Controller
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
         }
     }
+
+    public function getLoggedUser()
+    {
+        try {
+            $user = $this->userService->getUser();
+            return response()->json(['message'=>'success','data'=>$user],200);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
+        }
+    }
     /*
 
      * Update the specified resource in storage.

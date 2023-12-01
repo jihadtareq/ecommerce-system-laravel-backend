@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Auth;
 class UserService 
 {
     private $userRepository;
@@ -28,6 +29,12 @@ class UserService
         return new UserResource($user);
     }
 
+    public function getUser()
+    {
+        $userId = Auth::user()->id;
+        return new UserResource($this->userRepository->findById($userId));
+
+    }
     public function getUserById($id)
     {
         return new UserResource($this->userRepository->findById($id));

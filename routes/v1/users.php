@@ -4,7 +4,8 @@ Route::prefix('users')->group(function(){
     
     Route::group(['middleware' => ['auth:api','userCheck']], function () {
         Route::get('/','UserController@index');
-        Route::get('/{userId}','UserController@show');
+        Route::get('/{user}/profile','UserController@show');
+        Route::get('/profile','UserController@getLoggedUser');
         // Route::delete('/delete','UserController@destory');
         // Route::patch('/update-info','UserController@update');
     });
