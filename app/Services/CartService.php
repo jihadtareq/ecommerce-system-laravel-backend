@@ -10,6 +10,8 @@ class CartService
 {
     private $cartRepository;
     private $cartDetailsRepository;
+
+    protected $totalPrice = 0;
     protected $cartPayload = [];
     protected $cartDetailsPayload = [];
     public function __construct(CartRepositoryInterface $cartRepository,CartDetailsRepository $cartDetailsRepository)
@@ -36,13 +38,20 @@ class CartService
        ];
 
     }
-    public function calculateTotalPrice()
+    public function calculateTotalPrice($details)
     {
+        foreach ($details as  $detail) 
+        {
+            $this->totalPrice += $detail->calculatePrice();
+        }
         
     }
     public function getCartById($id)
     {
-        return new CartResource($this->cartRepository->findById($id));
+        $cart = $this->cartRepository->findById($id);
+        $this->calculateTotalPrice($cart->details);
+        $cart->totalPrice = $this->totalPrice;
+        return new CartResource($cart);
     }
 
     public function getOrCreateCart($payload)

@@ -17,7 +17,7 @@ class CartResource extends JsonResource
         return [
             'id' => $this->id,
             'userId'=>$this->user_id,
-            // 'totalPrice'=>,
+            'totalPrice'=>$this->totalPrice,
             'cartDetails'=>CartDetailResource::collection($this->details),
         ];
     }

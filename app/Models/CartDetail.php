@@ -27,5 +27,10 @@ class CartDetail extends Model
     {
         return $this->product->calculatePrice();    
     }
+    function calculatePrice()
+    {
+        return $this->quantity * $this->product->calculatePrice();    
+    }
+
 
 }
