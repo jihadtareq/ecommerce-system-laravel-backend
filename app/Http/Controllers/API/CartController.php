@@ -23,10 +23,8 @@ class CartController extends Controller
     {
         try {
             DB::transaction(function () use($request){
-        
                 $this->cart = $this->cartService->getOrCreateCart($request->all());
-       
-                $this->cartDetailsService->create($this->cart->id,$request->all());
+                $this->cartDetailsService->updateOrCreate($this->cart->id,$request->all());
             });
             return response()->json(['message'=>'success','data'=>$this->cart],200);
         } catch (\Throwable $th) {

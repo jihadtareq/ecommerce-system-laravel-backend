@@ -18,7 +18,7 @@ class CartResource extends JsonResource
             'id' => $this->id,
             'userId'=>$this->user_id,
             // 'totalPrice'=>,
-            'cartDetails'=> new CartDetailResource($this->details),
+            'cartDetails'=>CartDetailResource::collection($this->details),
         ];
     }
 }

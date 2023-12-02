@@ -26,8 +26,7 @@ class CartService
     public function create($payload)
     {
         $this->setCart($payload);
-        $cart = $this->cartRepository->create($this->cartPayload);
-       return new CartResource($cart);
+       return new CartResource( $this->cartRepository->create($this->cartPayload));
     }
 
     public function setCart($payload)
