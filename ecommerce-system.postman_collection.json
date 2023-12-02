@@ -1,0 +1,1462 @@
+{
+	"info": {
+		"_postman_id": "32c59b4b-29fa-4b6e-8c2a-d6a9405afd54",
+		"name": "ecommerce-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24504834"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "The weeknd5",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01205243489",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "theweeknd5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "typeId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/users/register",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "poalo andria",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01205233481",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "poalo39@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "typeId",
+											"value": "1",
+											"description": "type 1 refers to merchant,type 2 refers to user",
+											"type": "text"
+										},
+										{
+											"key": "commercialRegistrationNumber",
+											"value": "81731937321",
+											"type": "text"
+										},
+										{
+											"key": "taxRegistrationNumber",
+											"value": "83718723913",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/Users/Bdaiat/Desktop/Screen Shot 2023-11-17 at 11.15.18 PM.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/users/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"poalo andria\",\n        \"phone\": \"01205233481\",\n        \"email\": \"poalo39@gmail.com\",\n        \"picture\": \"\",\n        \"typeId\": 1,\n        \"type\": {\n            \"id\": 1,\n            \"type\": \"merchant\"\n        },\n        \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjczMDk0YmE2NDdiYzhiMGJjODUwM2E1ZDJlNTM2OTYyZDE3MmNhYzNhZWRkOTc3NTk1OWEzNDVmOWJmZGNlNTM3MzQ4MDBhMjRkNmRlNzUiLCJpYXQiOjE3MDE0NDYxNjkuMTI4MjUzLCJuYmYiOjE3MDE0NDYxNjkuMTI4MjU0LCJleHAiOjE3MzMwNjg1NjkuMTExNjE5LCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.JWtXJkn3WBq79g-a9BgDaLTvnOULWZzIY80jS8fEbIrd52g7hBn5EBx-ZxDAS2psoCJAH32RJ8jaIeRT4-QSeITjcIAIvVv8xCO0ewpBOxAIOQkup-EEDUkzTO5Gae8G8TJEn68IS_s_SQjItTx-_rz23ewL-QHD_MOr6X6AHkx4j6ehkSW8Z_fxu7oJNiDNN0LNcGpColGdlEW42vYr5hydmltWHjGQHpUQGgc9mwU151auZa4V5cIIBJ_-y_At0PAxJa9hn6Et5DNNVcOmjr7jHmmTmp7WNh-8X7FqQ5x3tpNUUv6O6DUUzhY6SaVCvElcWEMLYzAVf3p9GlEhlxalqJGEliN6c-c5w56LbTAILuQe2nroVGzTcWnr_X6Weq5IG1jK56GXbxh81yiMbGH5wDSuRREloomNyqMG_EHgYYT_mFusmRrP9D1ilRmPSdFfN9WkGZiDlu86oHThS2yCPjGSY-VN-AwZ9eS71oq0bRI1MHdjNj_B_uS-FCCmrW0_Y4YCn0mD6RMiqfzQTJpFXaYX74QTtOKzMbKDFYVoLyu23aYUsd157erN-T00A_WqDpqg2zAtz7vcm1mHVZAeIm29p4Xnj01Eaie8ditR83ax1MJMpEmeqLBLqg2lNmA3SkVJDtW5xEQE2Bh0Jef30Aejtt5U32U5VaT9SqU\"\n    }\n}"
+						},
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "poalo andria",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01205233481",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "poalo39@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "typeId",
+											"value": "1",
+											"description": "type 1 refers to merchant,type 2 refers to user",
+											"type": "text"
+										},
+										{
+											"key": "commercialRegistrationNumber",
+											"value": "81731937321",
+											"type": "text"
+										},
+										{
+											"key": "taxRegistrationNumber",
+											"value": "83718723913",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/Users/Bdaiat/Desktop/Screen Shot 2023-11-17 at 11.15.18 PM.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/users/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"mai andria\",\n        \"phone\": \"01205433481\",\n        \"email\": \"mai@gmail.com\",\n        \"picture\": \"\",\n        \"typeId\": 1,\n        \"type\": {\n            \"id\": 2,\n            \"type\": \"customer\"\n        },\n        \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjczMDk0YmE2NDdiYzhiMGJjODUwM2E1ZDJlNTM2OTYyZDE3MmNhYzNhZWRkOTc3NTk1OWEzNDVmOWJmZGNlNTM3MzQ4MDBhMjRkNmRlNzUiLCJpYXQiOjE3MDE0NDYxNjkuMTI4MjUzLCJuYmYiOjE3MDE0NDYxNjkuMTI4MjU0LCJleHAiOjE3MzMwNjg1NjkuMTExNjE5LCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.JWtXJkn3WBq79g-a9BgDaLTvnOULWZzIY80jS8fEbIrd52g7hBn5EBx-ZxDAS2psoCJAH32RJ8jaIeRT4-QSeITjcIAIvVv8xCO0ewpBOxAIOQkup-EEDUkzTO5Gae8G8TJEn68IS_s_SQjItTx-_rz23ewL-QHD_MOr6X6AHkx4j6ehkSW8Z_fxu7oJNiDNN0LNcGpColGdlEW42vYr5hydmltWHjGQHpUQGgc9mwU151auZa4V5cIIBJ_-y_At0PAxJa9hn6Et5DNNVcOmjr7jHmmTmp7WNh-8X7FqQ5x3tpNUUv6O6DUUzhY6SaVCvElcWEMLYzAVf3p9GlEhlxalqJGEliN6c-c5w56LbTAILuQe2nroVGzTcWnr_X6Weq5IG1jK56GXbxh81yiMbGH5wDSuRREloomNyqMG_EHgYYT_mFusmRrP9D1ilRmPSdFfN9WkGZiDlu86oHThS2yCPjGSY-VN-AwZ9eS71oq0bRI1MHdjNj_B_uS-FCCmrW0_Y4YCn0mD6RMiqfzQTJpFXaYX74QTtOKzMbKDFYVoLyu23aYUsd157erN-T00A_WqDpqg2zAtz7vcm1mHVZAeIm29p4Xnj01Eaie8ditR83ax1MJMpEmeqLBLqg2lNmA3SkVJDtW5xEQE2Bh0Jef30Aejtt5U32U5VaT9SqU\"\n    }\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "The weeknd5",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01205243489",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "theweeknd5@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "typeId",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/users/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"The phone has already been taken. (and 1 more error)\",\n    \"errors\": {\n        \"phone\": [\n            \"The phone has already been taken.\"\n        ],\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "current user profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/users/profile",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "current user profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/users/profile",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"poalo andria\",\n        \"phone\": \"01205233481\",\n        \"email\": \"poalo39@gmail.com\",\n        \"picture\": \"\",\n        \"typeId\": 1,\n        \"type\": {\n            \"id\": 1,\n            \"type\": \"merchant\"\n        },\n        \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n        \"accessToken\": null,\n        \"commercialRegistrationNumber\": null,\n        \"taxRegistrationNumber\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/users/1/profile",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"1",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/users/1/profile",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"1",
+										"profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"Andrew\",\n        \"phone\": \"01208378326\",\n        \"email\": \"andrew@gmail.com\",\n        \"picture\": \"\",\n        \"typeId\": 1,\n        \"type\": {\n            \"id\": 1,\n            \"type\": \"merchant\"\n        },\n        \"createdAt\": \"2023-12-01T12:42:13.000000Z\",\n        \"updatedAt\": \"2023-12-01T12:42:13.000000Z\",\n        \"accessToken\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/users",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/users",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"name\": \"Andrew\",\n            \"phone\": \"01208378326\",\n            \"email\": \"andrew@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 1,\n            \"type\": {\n                \"id\": 1,\n                \"type\": \"merchant\"\n            },\n            \"createdAt\": \"2023-12-01T12:42:13.000000Z\",\n            \"updatedAt\": \"2023-12-01T12:42:13.000000Z\",\n            \"accessToken\": null\n        },\n        {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233480\",\n            \"email\": \"Me2d@gmail.comdddd\",\n            \"picture\": \"\",\n            \"typeId\": 2,\n            \"type\": {\n                \"id\": 2,\n                \"type\": \"user\"\n            },\n            \"createdAt\": \"2023-12-01T14:53:07.000000Z\",\n            \"updatedAt\": \"2023-12-01T14:53:07.000000Z\",\n            \"accessToken\": null\n        },\n        {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233483\",\n            \"email\": \"Me2d@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 2,\n            \"type\": {\n                \"id\": 2,\n                \"type\": \"user\"\n            },\n            \"createdAt\": \"2023-12-01T14:55:49.000000Z\",\n            \"updatedAt\": \"2023-12-01T14:55:49.000000Z\",\n            \"accessToken\": null\n        },\n        {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233484\",\n            \"email\": \"poalo@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 2,\n            \"type\": {\n                \"id\": 2,\n                \"type\": \"user\"\n            },\n            \"createdAt\": \"2023-12-01T14:56:58.000000Z\",\n            \"updatedAt\": \"2023-12-01T14:56:58.000000Z\",\n            \"accessToken\": null\n        },\n        {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233482\",\n            \"email\": \"poalo99@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 2,\n            \"type\": {\n                \"id\": 2,\n                \"type\": \"user\"\n            },\n            \"createdAt\": \"2023-12-01T15:05:53.000000Z\",\n            \"updatedAt\": \"2023-12-01T15:05:53.000000Z\",\n            \"accessToken\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"poalo30@gmail.com\",\n    \"password\":123456\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/v1/login",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"jojo@gmail.com\",\n    \"password\":123456\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}api/v1/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"failed\",\n    \"error\": \"Credentials do not match our records\"\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"poalo30@gmail.com\",\n    \"password\":123456\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}api/v1/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"poalo andria\",\n        \"phone\": \"01205233489\",\n        \"email\": \"poalo30@gmail.com\",\n        \"picture\": \"\",\n        \"typeId\": 1,\n        \"type\": {\n            \"id\": 1,\n            \"type\": \"merchant\"\n        },\n        \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n        \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n        \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTU3NWE2NmMwYTI3YzAxZGU3ZWIzNWYwNjUzZGVhNDgyMjkzZTJiODM1ZGEzMTRhMWJmNWIzODk1ZThkY2Q0YjVkZjA3YjM0OGQzZTQ0NGIiLCJpYXQiOjE3MDE0NTc0NzQuNDgwOTYyLCJuYmYiOjE3MDE0NTc0NzQuNDgwOTY2LCJleHAiOjE3MzMwNzk4NzQuNDUzNzIzLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.OnQFpe4xYac-PUGH2p5COxDinc6s2eDy3cwcLYYs0E02G6lKoq5SYWqlhWr4vtngb0tC5Bi5gJWlcAE0xV9DzqFMy5sLuR6E1jtWugIboYKFSAHt4lBbe4X_kkw1ze48alXx1NWeavKpRmkGOr1dzrleelAKoRJR4DQ0BdCugiL0RXBn-K-Rck4Fc71sF4r_WDuUqCwEGqrRl8fohGf1yf1CFIq-LN763b--Ceyb5uI9QpO2RNnU9lwm_bQsI5UFCQfX6WVzVdzA3IiIXwCI9423zeBNjhMaarN_CrEEHGsAQWCpqBNCEB_mlF6H4z6ZFgWTIprDHWhWhPb37Oi6IZe8bmDDgluABeFu_QQgqwyHEwBsWwT8ni3pzPq1s5Htssb01DK4kgpsN-mZJYHakGb5Pc_k7j5wL_gcpwrakfdAluVjYXFPLJFJVt4Pv0G-0ercLcxOOO-dCgyx_9-VZmMMaP-ONE_0DDSW5dfVMuT0p33StemCWuV4wVRRAtxzp1Np6uuAHP-93xQrU6mKUkfNm5Ne3UPLHsP0x_usBRJtjEXduNDuCSBGJB4A5Ano7Tw68Z4LfeBGRCFJeLNarKpYLfVajRvEYCxaSDfUV15-d_sQ0wgEx6EGxKr9iL2X7qH6g1qhWkfiVDTjtV0RE7_SMORpWdb_zpXUC1Nn3Ag\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "create store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"includeVat\":0,\n    \"vatPercentage\":0,\n    \"shippingCost\":25.7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/v1/stores",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"stores"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"includeVat\":0,\n    \"vatPercentage\":0,\n    \"shippingCost\":25.7\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}api/v1/stores",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"stores"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"includeVat\": 0,\n        \"vatPercentage\": \"0.00\",\n        \"shippingCost\": \"25.70\",\n        \"merchant\": {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233481\",\n            \"email\": \"poalo39@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 1,\n            \"type\": {\n                \"id\": 1,\n                \"type\": \"merchant\"\n            },\n            \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n            \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n            \"accessToken\": null,\n            \"commercialRegistrationNumber\": null,\n            \"taxRegistrationNumber\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get store",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/stores/2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"stores",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get store",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/stores/1",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"stores",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": 2,\n        \"includeVat\": 0,\n        \"vatPercentage\": \"0.00\",\n        \"shippingCost\": \"25.70\",\n        \"merchant\": {\n            \"name\": \"poalo andria\",\n            \"phone\": \"01205233481\",\n            \"email\": \"poalo39@gmail.com\",\n            \"picture\": \"\",\n            \"typeId\": 1,\n            \"type\": {\n                \"id\": 1,\n                \"type\": \"merchant\"\n            },\n            \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n            \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n            \"accessToken\": null,\n            \"commercialRegistrationNumber\": '55788901823791',\n            \"taxRegistrationNumber\": '87128321873'\n        }\n    }\n}"
+						},
+						{
+							"name": "get store error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/users/1",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"failed\",\n    \"error\": \"not the owner of store\"\n}"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/stores",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"stores"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/stores",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"stores"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        },\n        {\n            \"id\": 6,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233481\",\n                \"email\": \"poalo39@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"updatedAt\": \"2023-12-01T15:56:08.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "storeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "availableQuantity",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/Bdaiat/Desktop/Screen Shot 2023-11-30 at 12.54.27 PM.png"
+								},
+								{
+									"key": "name[en]",
+									"value": "product1",
+									"type": "text"
+								},
+								{
+									"key": "name[ar]",
+									"value": "منتج١",
+									"type": "text"
+								},
+								{
+									"key": "description[ar]",
+									"value": "منتج منتج منتج",
+									"type": "text"
+								},
+								{
+									"key": "description[en]",
+									"value": "product product",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/products",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "language",
+										"value": "ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "storeId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "availableQuantity",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "30",
+											"type": "text"
+										},
+										{
+											"key": "name[en]",
+											"value": "product1",
+											"type": "text"
+										},
+										{
+											"key": "name[ar]",
+											"value": "منتج١",
+											"type": "text"
+										},
+										{
+											"key": "description[ar]",
+											"value": "منتج منتج منتج",
+											"type": "text"
+										},
+										{
+											"key": "description[en]",
+											"value": "product product",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/Bdaiat/Desktop/Screen Shot 2023-11-30 at 12.54.27 PM.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/products",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"failed\",\n    \"error\": \"not_merchant\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/products/4",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "language",
+										"value": "ar",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/products/4",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"products",
+										"4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"منتج١\",\n        \"description\": \"منتج منتج منتج\",\n        \"image\": \"http://127.0.0.1:8000/products/1701464180.png\",\n        \"storeId\": 1,\n        \"price\": \"30.00000\",\n        \"availableQuantity\": 20,\n        \"store\": {\n            \"id\": 1,\n            \"includeVat\": 0,\n            \"vatPercentage\": \"0.00\",\n            \"shippingCost\": \"25.70\",\n            \"merchant\": {\n                \"name\": \"poalo andria\",\n                \"phone\": \"01205233489\",\n                \"email\": \"poalo30@gmail.com\",\n                \"picture\": \"\",\n                \"typeId\": 1,\n                \"type\": {\n                    \"id\": 1,\n                    \"type\": \"merchant\"\n                },\n                \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n                \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n                \"accessToken\": null,\n                \"commercialRegistrationNumber\": null,\n                \"taxRegistrationNumber\": null\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/products",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/stores",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"stores"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"product1\",\n            \"description\": \"product product\",\n            \"image\": \"http://127.0.0.1:8000/products/1701463976.png\",\n            \"storeId\": 1,\n            \"price\": \"30.00000\",\n            \"availableQuantity\": 20,\n            \"store\": {\n                \"id\": 1,\n                \"includeVat\": 0,\n                \"vatPercentage\": \"0.00\",\n                \"shippingCost\": \"25.70\",\n                \"merchant\": {\n                    \"name\": \"poalo andria\",\n                    \"phone\": \"01205233489\",\n                    \"email\": \"poalo30@gmail.com\",\n                    \"picture\": \"\",\n                    \"typeId\": 1,\n                    \"type\": {\n                        \"id\": 1,\n                        \"type\": \"merchant\"\n                    },\n                    \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n                    \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n                    \"accessToken\": null,\n                    \"commercialRegistrationNumber\": null,\n                    \"taxRegistrationNumber\": null\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"product1\",\n            \"description\": \"product product\",\n            \"image\": \"http://127.0.0.1:8000/products/1701464180.png\",\n            \"storeId\": 1,\n            \"price\": \"30.00000\",\n            \"availableQuantity\": 20,\n            \"store\": {\n                \"id\": 1,\n                \"includeVat\": 0,\n                \"vatPercentage\": \"0.00\",\n                \"shippingCost\": \"25.70\",\n                \"merchant\": {\n                    \"name\": \"poalo andria\",\n                    \"phone\": \"01205233489\",\n                    \"email\": \"poalo30@gmail.com\",\n                    \"picture\": \"\",\n                    \"typeId\": 1,\n                    \"type\": {\n                        \"id\": 1,\n                        \"type\": \"merchant\"\n                    },\n                    \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n                    \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n                    \"accessToken\": null,\n                    \"commercialRegistrationNumber\": null,\n                    \"taxRegistrationNumber\": null\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "create cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":3,\n    \"quantity\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/v1/carts",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"carts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\":3,\n    \"quantity\":2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}api/v1/carts",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"carts"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"userId\": 12,\n        \"totalPrice\": 180,\n        \"cartDetails\": [\n            {\n                \"id\": 8,\n                \"cartId\": 1,\n                \"productId\": 3,\n                \"quantity\": 6,\n                \"price\": 30,\n                \"product\": {\n                    \"id\": 3,\n                    \"name\": \"product1\",\n                    \"description\": \"product product\",\n                    \"image\": \"http://127.0.0.1:8000/products/1701463976.png\",\n                    \"storeId\": 1,\n                    \"price\": \"30.00000\",\n                    \"availableQuantity\": 20,\n                    \"store\": {\n                        \"id\": 1,\n                        \"includeVat\": 0,\n                        \"vatPercentage\": \"0.00\",\n                        \"shippingCost\": \"25.70\",\n                        \"merchant\": {\n                            \"name\": \"poalo andria\",\n                            \"phone\": \"01205233489\",\n                            \"email\": \"poalo30@gmail.com\",\n                            \"picture\": \"\",\n                            \"typeId\": 1,\n                            \"type\": {\n                                \"id\": 1,\n                                \"type\": \"merchant\"\n                            },\n                            \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n                            \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n                            \"accessToken\": null,\n                            \"commercialRegistrationNumber\": null,\n                            \"taxRegistrationNumber\": null\n                        }\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/carts/1",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get cart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/v1/carts/1",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"carts",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"userId\": 12,\n        \"totalPrice\": 240,\n        \"cartDetails\": [\n            {\n                \"id\": 8,\n                \"cartId\": 1,\n                \"productId\": 3,\n                \"quantity\": 8,\n                \"price\": 30,\n                \"product\": {\n                    \"id\": 3,\n                    \"name\": \"product1\",\n                    \"description\": \"product product\",\n                    \"image\": \"http://127.0.0.1:8000/products/1701463976.png\",\n                    \"storeId\": 1,\n                    \"price\": \"30.00000\",\n                    \"availableQuantity\": 20,\n                    \"store\": {\n                        \"id\": 1,\n                        \"includeVat\": 0,\n                        \"vatPercentage\": \"0.00\",\n                        \"shippingCost\": \"25.70\",\n                        \"merchant\": {\n                            \"name\": \"poalo andria\",\n                            \"phone\": \"01205233489\",\n                            \"email\": \"poalo30@gmail.com\",\n                            \"picture\": \"\",\n                            \"typeId\": 1,\n                            \"type\": {\n                                \"id\": 1,\n                                \"type\": \"merchant\"\n                            },\n                            \"createdAt\": \"2023-12-01T16:58:02.000000Z\",\n                            \"updatedAt\": \"2023-12-01T16:58:02.000000Z\",\n                            \"accessToken\": null,\n                            \"commercialRegistrationNumber\": null,\n                            \"taxRegistrationNumber\": null\n                        }\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
