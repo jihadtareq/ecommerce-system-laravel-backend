@@ -9,9 +9,11 @@ use App\Repositories\Contracts\StoreRepositoryInterface;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Repositories\Contracts\CartRepositoryInterface;
 use App\Repositories\Contracts\CartDetailsRepositoryInterface;
+use App\Repositories\Contracts\CustomerRepositoryInterface;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Eloquent\CartDetailsRepository;
 use App\Repositories\Eloquent\CartRepository;
+use App\Repositories\Eloquent\CustomerRepository;
 use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\MerchantRepository;
@@ -35,6 +37,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ProductRepositoryInterface::class,ProductRepository::class);
         $this->app->bind(CartRepositoryInterface::class,CartRepository::class);
         $this->app->bind(CartDetailsRepositoryInterface::class,CartDetailsRepository::class);
+        $this->app->bind(CustomerRepositoryInterface::class,CustomerRepository::class);
+
     
     }
 
