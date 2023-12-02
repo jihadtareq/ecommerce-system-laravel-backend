@@ -29,26 +29,35 @@ class UserService
 
     public function register($data)
     {
- 
-        $this->hashPassword($data['password']);
-        $data['password'] = $this->password;
         if(isset($data['picture']))
         {
             $this->setImage($data['picture']);
             $data['picture'] = $this->image;
         }
+        
         DB::transaction(function () use($data){
-            $this->user =  $this->userRepository->create($data);
+            $this->user =  $this->createUser($data);
             if($this->user->getType() == UserType::MERCHANT)
-            {
-                $this->merchantService->setMerchantArray($this->user,$data);
-                $this->merchantService->createMerchantDetail();
-            }
+                $this->createMerchatDetails($this->user,$data);
+
             $this->user->accessToken = $this->user->createToken('users')->accessToken; 
         });
         return new UserResource($this->user);
     }
 
+
+    public function createUser($data) 
+    {  
+       $this->hashPassword($data['password']);
+       $data['password'] = $this->password;
+       return  $this->userRepository->create($data);
+
+    }
+    public function createMerchatDetails($user,$data) 
+    {
+        $this->merchantService->setMerchantArray($user,$data);
+        $this->merchantService->createMerchantDetail();
+    }
     public function setImage($image)
     {
         $this->image = time().'.'.$image->getClientOriginalExtension();
