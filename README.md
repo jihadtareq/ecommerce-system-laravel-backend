@@ -1,66 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-Commerce System with Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This project is an E-Commerce system built with Laravel, utilizing RESTful API architecture, and implementing the service and repository design patterns. The system is designed to provide a scalable and maintainable solution for managing products, orders, users, and more.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **User Authentication**: Secure user registration and authentication system using Passport.
+- **Store Management**: CRUD operations for managing stores.
+- **Product Management**: CRUD operations for managing products, including images.
+- **Cart Processing**: CRUD operations for managing carts, including cart details.
+- **RESTful API**: A robust API for seamless communication between the front end and back end.
+- **Service and Repository Patterns**: Codebase is organized using service and repository design patterns for modularity and testability.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Database Schema
 
-## Learning Laravel
+The database schema is structured to support the following features:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **users**: Table for storing user information.
+- **user_types**: Table for storing user types(which we have to type normal customer and merchant).
+- **products**: Table for managing product details.
+- **translations**: Table for general translation for any another table.
+- **carts**: Table for add items to cart.
+- **cart_details**: Table to store individual items within an cart.
+- **orders**: Table for tracking customer orders.
+- **order_details**: Table to store individual items within an order.
+- **order_statuses**: Table to store order status.
+- **languages**: Table to store languages.
+- **merchant_details**: Table to store more user details if the type is merchant.
+- **drivers**: Table to store driver.
+- **stores**: Table to stores for each merchant.
+- **payment_method**: Table to store payment method(cash-online..etc).
+- **payment_transaction**: Table to store payment transaction in case payment method is online.
+- **addresses**: Table to store user addresses.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Please refer to the `database/migrations` directory for detailed schema information.
 
-## Laravel Sponsors
+## Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Before you begin, make sure you have the following installed:
 
-### Premium Partners
+- PHP
+- Composer
+- MySQL or any other database server
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Setup
 
-## Contributing
+1. Clone the repository:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   git clone https://github.com/jihadtareq/ecommerce-system-laravel-backend.git
 
-## Code of Conduct
+## Install PHP dependencies:
+```sh
+ composer install
+```    
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Configure your environment variables:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    Duplicate the .env.example file and rename it to .env.
+    Update the database connection details and other necessary configurations in the .env file.
 
-## License
+1-Run database migrations and seed:
+```sh
+    php artisan migrate --seed
+```    
+2-Start the development server:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+    php artisan serve
+```
+
+The application will be accessible at http://localhost:8000 by default.
+
+...
+
+## Customer Module (Note for Vue.js Testing)
+
+The customer module included in this project is primarily designed for testing Vue.js tasks. It may not fully represent a production-ready customer management system. The primary focus of this module is to provide a simplified interface for testing and demonstrating Vue.js functionalities within the context of an e-commerce system.
+
+### Usage
+
+While testing the Vue.js tasks related to the customer module, keep in mind that:
+
+- This module may not have complete CRUD functionality.
+- The features provided are for Vue.js testing purposes only.
+- Production-ready customer management features may require additional development.
+
+Feel free to explore and modify the customer module as needed for your Vue.js testing. If you have any questions or need assistance.
+
+## Vuejs repository:
+
+   ```bash
+    git clone https://github.com/jihadtareq/customer-CRUD-vuejs.git
+   ```
+
+...
+
+
