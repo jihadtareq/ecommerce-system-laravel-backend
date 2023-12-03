@@ -12,7 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(MerchantSeeder::class);
+        $this->call(MerchantSeeder::class);  //merchant example cycle
+        $this->call(UserSeederExample::class); //user and cart example cycle
         $this->call(LanguageSeeder::class);
         $this->call(OrderStatusesSeeder::class);
         $this->call(PaymentMethodSeeder::class);
