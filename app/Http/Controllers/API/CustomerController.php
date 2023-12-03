@@ -34,7 +34,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         try {
-            $customers = $this->customerService->all();
+            $customers = $this->customerService->create($request->all());
             return response()->json(['message'=>'success','data'=>$customers],200);
         } catch (\Throwable $th) {
             //throw $th;
@@ -48,7 +48,7 @@ class CustomerController extends Controller
     public function show(string $id)
     {
         try {
-            $customers = $this->customerService->all();
+            $customers = $this->customerService->getCustomerById($id);
             return response()->json(['message'=>'success','data'=>$customers],200);
         } catch (\Throwable $th) {
             //throw $th;
@@ -61,8 +61,8 @@ class CustomerController extends Controller
     public function update(Request $request, string $id)
     {
         try {
-            $customers = $this->customerService->all();
-            return response()->json(['message'=>'success','data'=>$customers],200);
+            $this->customerService->updateCustomer($id,$request->all());
+            return response()->json(['message'=>'success','data'=>'Data updated successfully'],200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message'=>'failed','error'=>$th->getMessage()],500);
@@ -75,7 +75,7 @@ class CustomerController extends Controller
     public function destroy(string $id)
     {
         try {
-            $customers = $this->customerService->all();
+            $customers = $this->customerService->deleteCustomer($id);
             return response()->json(['message'=>'success','data'=>$customers],200);
         } catch (\Throwable $th) {
             //throw $th;

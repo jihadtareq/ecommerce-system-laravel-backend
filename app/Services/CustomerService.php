@@ -29,7 +29,7 @@ class CustomerService
 
     public function updateCustomer($id,$payload)
     {
-        return new CustomerResource($this->customerRepository->update($id,$payload));
+        return $this->customerRepository->update($id,$payload);
 
     }
 
